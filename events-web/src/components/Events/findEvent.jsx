@@ -1,0 +1,93 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { BsChevronRight } from "react-icons/bs";
+
+const FindEvent = () => {
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedEventType, setSelectedEventType] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [events, setEvents] = useState([]); // Store original events
+  const [filteredEvents, setFilteredEvents] = useState([]); // Store filtered events
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('http://localhost:4001/api/v1/events');
+        setEvents(response.data);
+        setFilteredEvents(response.data); // Initialize filteredEvents with all events
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const applyFilters = () => {
+    const filtered = events.filter(event => {
+      const isStateMatch = !selectedState || event.state === selectedState;
+      const isCityMatch = !selectedCity || event.city === selectedCity;
+      const isEventTypeMatch = !selectedEventType || event.eventType === selectedEventType;
+      const isDateMatch = !selectedDate || event.date === selectedDate;
+      return isStateMatch && isCityMatch && isEventTypeMatch && isDateMatch;
+    });
+
+    setFilteredEvents(filtered);
+  };
+
+  useEffect(() => {
+    applyFilters();
+  }, [selectedState, selectedCity, selectedEventType, selectedDate]);
+
+  return (
+    <div className="max-w-4xl mx-auto mt-10 px-4">
+        <div className="container mx-auto">
+          <Link to='/' className='text-blue-700 flex items-center'>
+            Home<BsChevronRight className='h-7 w-5 ml-2' />Find-Events
+          </Link>
+        </div>
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Find Events Here</h2>
+
+      {/* Events Display */}
+      <div className="flex flex-row flex-wrap">
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event, index) => (
+            <div
+              key={index}
+              className="p-4 bg-[#ffffffe9] rounded-md shadow-md w-[380px] h-[380px] m-4 flex flex-col items-center hover:bg-[#bdb9b989] cursor-pointer font-bold "
+            >
+              <img
+                src={`http://localhost:4001/uploads/${event.image}`} // Ensure the URL is correct
+                alt={event.title}
+                className="w-full h-[190px] object-cover rounded-md mb-2"
+              />
+
+              <h3 className="text-lg">{event.title}</h3>
+              <p className="text-gray-700">{event.city}, {event.state}</p>
+              <p className="text-gray-700">{event.eventType}</p>
+              <p className="text-gray-700">{event.date}</p>
+              <p className="text-gray-700">
+                {event.description.length > 50
+                  ? `${event.description.substring(0, 50)}...`
+                  : event.description}
+              </p>
+              <Link
+                to={`/events/${event._id}`} // Use Link from react-router-dom for navigation
+                className="text-blue-500 hover:text-blue-600 underline"
+              >
+                Read more
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>No events found.</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default FindEvent;
+

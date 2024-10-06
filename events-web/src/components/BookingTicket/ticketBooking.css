@@ -1,0 +1,44 @@
+.ticket-booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .ticket-booking-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ticket-booking-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ticket-booking-form input,
+  .ticket-booking-form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .ticket-booking-form input[type="radio"] {
+    width: auto;
+  }
+  
+  .ticket-booking-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ticket-booking-form button:hover {
+    background-color: #0056b3;
+  }
+  /* Optional, this will reuse the same styles from other fields */
+.form-group input[type="tel"] {
+    border-color: #ddd;
+  }
+  

@@ -1,0 +1,35 @@
+/* Add background image to the entire landing page */
+.landing-page-bg {
+    background-image: url('../../assets/eventD.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: This makes the background stay fixed when scrolling */
+    min-height: 100vh;
+    position: relative;
+    margin-top: 0%;
+  }
+  
+  /* Add a subtle overlay on the background to improve text readability */
+  .landing-page-overlay {
+    background-color: rgba(206, 252, 174, 0.729); 
+    background-image: linear-gradient(rgb(249, 249, 249),rgb(7, 210, 241),rgb(21, 124, 159));
+    min-height: 100vh;
+  }
+  
+  /* Make sure the content is readable on top of the background */
+  .landing-page-content {
+    color: rgb(250, 247, 247); /* Change the text color to stand out on the dark background */
+  }
+  
+  /* Adjust button styles */
+  .button-link {
+    background-color: #2b98b6;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .button-link:hover {
+    background-color: #1780a1;
+  }
+  
+  
