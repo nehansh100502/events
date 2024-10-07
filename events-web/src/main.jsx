@@ -19,6 +19,7 @@ import EventDetail from './components/Events/eventDetails';
 import  DeleteEvent from './components/Delete/deleteEvent.jsx';
 import Contact from './components/LandingPage/contact.jsx';
 import TicketBooking from './components/BookingTicket/bookTicket.jsx';
+import Confirm from './components/BookingTicket/confirm.jsx';
 
 const router = createBrowserRouter([
 
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
                 path: '/TicketBook',
                 element: <TicketBooking />,
               },
+              {
+                path: '/confirm',
+                element: <Confirm />,
+              },
+  
   
 ]);
 

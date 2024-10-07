@@ -42,21 +42,24 @@ const FindEvent = () => {
   }, [selectedState, selectedCity, selectedEventType, selectedDate]);
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 px-4">
+    <>
+    <div className='bg-[#95e3fd]'>
+    <div className="max-w-4xl mx-auto mt-1 px-4">
         <div className="container mx-auto">
           <Link to='/' className='text-blue-700 flex items-center'>
             Home<BsChevronRight className='h-7 w-5 ml-2' />Find-Events
           </Link>
         </div>
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Find Events Here</h2>
-
+      <h2 className="text-3xl font-bold text-center text-[#266585] mb-6">Find Events Here</h2>
+      <h2 className="text-xl text-center text-[#1a181b] mb-6">Explore events with CrowdHive</h2>
+      <hr className='h-1 bg-white w-full'/>
       {/* Events Display */}
       <div className="flex flex-row flex-wrap">
         {filteredEvents.length > 0 ? (
           filteredEvents.map((event, index) => (
             <div
               key={index}
-              className="p-4 bg-[#ffffffe9] rounded-md shadow-md w-[380px] h-[380px] m-4 flex flex-col items-center hover:bg-[#bdb9b989] cursor-pointer font-bold "
+              className="p-4 bg-[#ffffffe9] rounded-md shadow-md w-[380px] h-[380px] m-4 flex flex-col items-center hover:bg-[#8deff5ba] cursor-pointer font-bold "
             >
               <img
                 src={`http://localhost:4001/uploads/${event.image}`} // Ensure the URL is correct
@@ -86,6 +89,15 @@ const FindEvent = () => {
         )}
       </div>
     </div>
+    <footer>
+      <div className='h-30 bg-[#beeee6]'>
+        <div>
+        <h2 className='text-center text-black font-semibold p-11 hover:text-red-600'>Find out all events here with CrowdHive :) 🙂</h2>
+        </div>
+      </div>
+    </footer>
+    </div>
+    </>
   );
 };
 

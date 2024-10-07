@@ -11,8 +11,8 @@
   
   /* Add a subtle overlay on the background to improve text readability */
   .landing-page-overlay {
-    background-color: rgba(206, 252, 174, 0.729); 
-    background-image: linear-gradient(rgb(249, 249, 249),rgb(7, 210, 241),rgb(21, 124, 159));
+    /* background-color: rgba(206, 252, 174, 0.729);  */
+    background-image: linear-gradient(rgb(249, 249, 249),rgb(7, 210, 241),rgb(211, 246, 243));
     min-height: 100vh;
   }
   

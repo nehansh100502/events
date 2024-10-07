@@ -57,7 +57,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#ebe7e5f3] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#a7f0f0f3] py-12 px-4 sm:px-6 lg:px-8">
       <Link to='/' className='text-blue-700 mr-[400px] flex flex-wrap p-2'>Home<BsChevronRight className='h-7 w-5'/>Sign up</Link>
       <div className="max-w-md w-full space-y-8">
         <div>

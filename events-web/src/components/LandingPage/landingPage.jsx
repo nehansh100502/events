@@ -434,7 +434,7 @@ function LandingPage() {
               </div>
             </section>
 
-            <hr className="bg-blue-500 w-full h-1 mb-12 border-none" />
+            <hr className="bg-white w-full h-1 mb-1 border-none" />
 
             {/* Event Description */}
             <div className="text-blue-700 text-center text-lg font-light pt-20">

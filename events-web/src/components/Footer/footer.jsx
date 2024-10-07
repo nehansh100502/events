@@ -4,7 +4,8 @@ import './footer.css'
 function footer() {
   return (
     <>
-      <footer class="bg-white text-gray-400 py-6 text-center">
+    <hr className='w-ull bg-[#33dcfa] h-1'/>
+      <footer class="bg-[#dafbfbf6] text-gray-700 py-6 text-center">
         <div className=''>
           <div className='text-xl font-semibold text-[#257f91]'> 🌟 Contact Us 🌟</div>
           <div className=' text-center p-7 text-[#257f91]'>

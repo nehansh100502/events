@@ -76,14 +76,14 @@ const Login = () => {
 
   return (
     <>
-      <header className="fixed left-0 w-full h-16 bg-gray-300 text-white flex items-center justify-center z-50">
+      <header className="fixed left-0 w-full h-16 bg-[#5ed6e8] text-white flex items-center justify-center z-50">
         <div className="container mx-auto ml-3">
           <Link to='/' className='text-blue-700 flex items-center'>
             Home<BsChevronRight className='h-7 w-5 ml-2' />Log In
           </Link>
         </div>
       </header>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#f3f0eee7] py-12 px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-[#b6f1fde7] py-12 px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-md w-full space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
